@@ -6,6 +6,7 @@ export const envSchema = z.object({
   PORT: z.coerce.number().default(3000),
   BETTER_AUTH_SECRET: z.string().min(32),
   BETTER_AUTH_URL: z.url(),
+  BETTER_AUTH_REDIRECT: z.string(),
   GOOGLE_CLIENT_ID: z.string(),
   GOOGLE_CLIENT_SECRET: z.string(),
 });

@@ -1,5 +1,6 @@
 import { betterAuth } from 'better-auth';
 import { prismaAdapter } from 'better-auth/adapters/prisma';
+import { expo } from '@better-auth/expo';
 import { PrismaClient } from '@prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';
 import { env } from '../env';
@@ -22,4 +23,6 @@ export const auth = betterAuth({
       clientSecret: env.GOOGLE_CLIENT_SECRET,
     },
   },
+  trustedOrigins: [env.BETTER_AUTH_REDIRECT],
+  plugins: [expo()],
 });
